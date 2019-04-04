@@ -13,8 +13,8 @@ body {
 }
 
 .app {
-  width: 50%;
-  margin: 0 auto;
+  width: 35rem;
+  margin: 5rem auto;
   padding: 5rem;
   display: flex;
   flex-direction: column;
