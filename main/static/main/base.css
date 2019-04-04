@@ -1,0 +1,27 @@
+body {
+  width: 100vw;
+  font-family: "Roboto Mono", "Courier New", Courier, monospace;
+  font-weight: 400;
+  box-sizing: border-box;
+  color: #2f3542;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+.app {
+  width: 50%;
+  margin: 0 auto;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.large-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+}

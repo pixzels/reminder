@@ -1,0 +1,50 @@
+.login .large-title,
+.signup .large-title {
+  margin-bottom: 2rem;
+}
+
+.errorlist {
+  margin-bottom: 1rem;
+}
+
+.errorlist li {
+  color: #ff4757;
+  list-style: none;
+}
+
+.form label {
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form input {
+  padding: 1rem;
+  font-size: inherit;
+  font-family: inherit;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid #2f3542;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.form input::placeholder {
+  color: #a4b0be;
+}
+
+.form .button {
+  font-size: inherit;
+  font-family: inherit;
+  padding: 1rem;
+  background: linear-gradient(to right, #5352ed, #3742fa);
+  color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

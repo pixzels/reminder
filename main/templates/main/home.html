@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Reminder</title>
+  <link rel="stylesheet" href="{% static "main/base.css" %}">
+  <link rel="stylesheet" href="{% static "main/home.css" %}">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,400,700" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <a href="/accounts/logout" class="logout">Logout</a>
+    <form method="post" action="/add/">
+      {% csrf_token %}
+      {{input_form}}
+    </form>
+    <div class="reminders">
+      {% for reminder in reminders %}
+      <a href="/{{reminder.id}}/delete/">
+        <div class="box">
+          <p class="body">{{reminder.body}}</p>
+          {% if reminder.due_date %}
+          <span>{{reminder.due_date}}</span>
+          {% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>

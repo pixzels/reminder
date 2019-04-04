@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Reminder</title>
+  <link rel="stylesheet" href="{% static "main/base.css" %}">
+  <link rel="stylesheet" href="{% static "accounts/accounts.css" %}">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,400,700" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <div class="signup">
+      <h1 class="large-title">Sign up</h1>
+      <form method="post" class="form">
+      {% csrf_token %}
+      {{form}}
+      <input type="submit" class="button">
+      </form>
+    </div>
+  </div>
+</body>
+</html>
