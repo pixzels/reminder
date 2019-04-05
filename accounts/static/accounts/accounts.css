@@ -41,7 +41,7 @@
   font-size: inherit;
   font-family: inherit;
   padding: 1rem;
-  background: linear-gradient(to right, #5352ed, #3742fa);
+  background: linear-gradient(to right bottom, #5352ed, #3742fa);
   color: #fff;
   outline: none;
   border: none;
@@ -55,7 +55,7 @@
   color: inherit;
   font-size: inherit;
   font-family: inherit;
-  background: linear-gradient(to right, #dfe4ea, #ced6e0);
+  background: linear-gradient(to right bottom, #dfe4ea, #ced6e0);
   outline: none;
   border: none;
   border-radius: 5px;
