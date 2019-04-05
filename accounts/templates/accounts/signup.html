@@ -16,7 +16,7 @@
       <h1 class="large-title">Sign up</h1>
       <form method="post" class="form">
       {% csrf_token %}
-      {{form}}
+      {{form.as_p}}
       <input type="submit" class="button">
       </form>
     </div>

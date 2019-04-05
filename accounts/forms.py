@@ -1,42 +1,20 @@
 from django import forms
-from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 
 
-class LoginForm(forms.Form):
-    username = forms.CharField(
-        widget=forms.TextInput(attrs={'placeholder': 'john.doe'}))
-    password = forms.CharField(
-        widget=forms.PasswordInput(attrs={'placeholder': 'Super secret'}))
+class SignUpForm(UserCreationForm):
+    email = forms.EmailField(required=True)
 
-    def clean(self, *args, **kwargs):
-        username = self.cleaned_data.get('username')
-        password = self.cleaned_data.get('password')
+    def __init__(self, *args, **kwargs):
+        super(UserCreationForm, self).__init__(*args, **kwargs)
 
-        if username and password:
-            if not User.objects.filter(username=username).exists():
-                raise forms.ValidationError('This user does not exist')
-            if not authenticate(username=username, password=password):
-                raise forms.ValidationError('Incorrect Password')
-
-        return super(LoginForm, self).clean(*args, **kwargs)
-
-
-class SignUpForm(forms.ModelForm):
-    email = forms.CharField(
-        widget=forms.EmailInput(attrs={'placeholder': 'john@example.com'}))
-    username = forms.CharField(
-        widget=forms.TextInput(attrs={'placeholder': 'john.doe'}))
-    password = forms.CharField(
-        widget=forms.PasswordInput(attrs={'placeholder': 'Super secret'}))
+        for f in ['username', 'password1', 'password2']:
+            self.fields[f].help_text = None
 
     class Meta:
         model = User
-        fields = (
-            'username',
-            'email',
-            'password'
-        )
+        fields = ('username', 'email', 'password1', 'password2')
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
