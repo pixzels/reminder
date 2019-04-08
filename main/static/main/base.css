@@ -13,9 +13,9 @@ body {
 }
 
 .app {
-  width: 35rem;
+  max-width: 35rem;
   margin: 3.5rem auto;
-  padding: 5rem;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
 }
